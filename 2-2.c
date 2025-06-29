@@ -85,5 +85,21 @@ int main() {
 
     printf("\nNomes invertidos foram gravados em 'nomes_invertidos.txt'.\n");
 
+    printf("\nNomes invertidos:\n");
+    arquivo = fopen("nomes_invertidos.txt", "r");
+    if (arquivo == NULL)
+    {
+        printf("Erro ao abrir o arquivo nomes_invertidos.txt\n");
+        return 1;
+    }
+    char linha[100];
+    while (fgets(linha, 100, arquivo))
+    {
+        printf("%s", linha);
+    }
+    fclose(arquivo);
+
+    printf("\n\nNomes invertidos foram gravados no arquivo nomes_invertidos.txt\n");
+
     return 0;
 }
